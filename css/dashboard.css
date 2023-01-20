@@ -1,0 +1,296 @@
+/* CONTAINER */
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--gap);
+  grid-template-areas:
+    "welcome"
+    "draft"
+    "yearly"
+    "news"
+    "tickets"
+    "tasks"
+    "orders";
+}
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "welcome welcome"
+      "draft yearly"
+      "tickets tickets"
+      "tasks tasks"
+      "news news"
+      "orders orders";
+  }
+}
+@media (min-width: 992px) {
+  .wrapper {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      "welcome welcome welcome draft draft draft"
+      "yearly yearly tickets tickets tasks tasks"
+      "news news news . . ."
+      "orders orders orders orders orders orders";
+  }
+}
+.page-body .welcome {
+  grid-area: welcome;
+}
+.page-body .quick-draft {
+  grid-area: draft;
+}
+.page-body .yearly-targets {
+  grid-area: yearly;
+}
+.page-body .latest-news {
+  grid-area: news;
+}
+.page-body .tickets-statistics {
+  grid-area: tickets;
+}
+.page-body .latest-tasks {
+  grid-area: tasks;
+}
+.page-body .recent-orders {
+  grid-area: orders;
+}
+/* WELCOME */
+.page-body .welcome {
+  padding: 0;
+}
+.page-body .welcome .welcome-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--neutral);
+  padding: var(--spacing-lg);
+  padding-bottom: 0;
+}
+.page-body .welcome .welcome-intro img {
+  width: 16em;
+}
+.page-body .welcome .profile-img {
+  border: 0.2em solid var(--border);
+  margin: calc(-0.5 * var(--size)) var(--spacing-lg) var(--spacing-lg);
+}
+@media (max-width: 767px) {
+  .page-body .welcome .welcome-intro img {
+    display: none;
+  }
+  .page-body .welcome .profile-img {
+    margin: calc(-0.5 * var(--size)) auto var(--spacing-lg);
+  }
+}
+.page-body .welcome .welcome-data {
+  padding: var(--spacing-md);
+  display: grid;
+  gap: var(--gap);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: var(--spacing-xs) 0;
+}
+.page-body .welcome .welcome-data > div {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .page-body .welcome .welcome-data {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.page-body .welcome .welcome-data > div .title {
+  margin-bottom: var(--spacing-3xs);
+}
+.page-body .welcome .welcome-data > div .desc {
+  font-size: var(--fs-sm);
+}
+.page-body .welcome .main-btn {
+  margin: 0 var(--spacing-md) var(--spacing-md) auto;
+}
+/* QUCIK DRAFT */
+.page-body .quick-draft form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  height: 100%;
+}
+.page-body .quick-draft form textarea {
+  resize: none;
+  height: 14em;
+}
+.page-body .quick-draft form .main-btn {
+  margin-left: auto;
+}
+/* YEARLY TARGETS */
+.page-body .yearly-targets .target {
+  display: flex;
+  align-items: center;
+  padding: var(--gap) 0;
+}
+.page-body .yearly-targets .target:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+.page-body .yearly-targets .target .icon {
+  --bg-saturation: 60%;
+  --bg-lightness: 60%;
+  --size: 2.4em;
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-items: center;
+  border-radius: var(--rad-circle);
+  font-size: var(--fs-lg);
+  color: var(--clr-white);
+  margin-right: var(--spacing-2xs);
+}
+.page-body .yearly-targets .target .target-title {
+  text-transform: capitalize;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+}
+.page-body .yearly-targets .target .target-earning {
+  color: var(--text1);
+  font-weight: var(--fw-bold);
+}
+.page-body .yearly-targets .target .target-progress {
+  position: relative;
+  margin-left: auto;
+  display: grid;
+  place-items: center;
+}
+.page-body .yearly-targets .target .svg-indicator {
+  --svg-size: 4em;
+  --svg-stroke-width: 0.3em;
+}
+.page-body .yearly-targets .target .svg-indicator-track {
+  stroke: var(--bg);
+}
+.page-body .yearly-targets .target .svg-indicator-indication {
+  stroke: var(--brand);
+}
+.page-body .yearly-targets .target .percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--brand);
+  font-size: var(--fs-sm);
+}
+/* TICKETS STATISTICS */
+.page-body .tickets-statistics .stats {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 576px) {
+  .page-body .tickets-statistics .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.page-body .tickets-statistics .stats .stat {
+  text-align: center;
+  border-radius: var(--rad-md);
+  padding: var(--spacing-lg);
+  border: 1px solid var(--border);
+}
+.page-body .tickets-statistics .stats .stat .icon {
+  --clr-saturation: 70%;
+  --clr-lightness: 50%;
+  font-size: var(--fs-2xl);
+}
+.page-body .tickets-statistics .stats .stat .number {
+  display: block;
+  font-size: var(--fs-xl);
+  margin: var(--spacing-4xs) 0 0;
+}
+/* LATEST NEWS */
+.page-body .latest-news .news {
+  display: flex;
+  align-items: center;
+  padding: var(--gap) 0;
+  text-transform: capitalize;
+}
+.page-body .latest-news .news:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+.page-body .latest-news .news img {
+  width: 6em;
+  border-radius: 0.6em;
+  margin-right: var(--spacing-2xs);
+}
+.page-body .latest-news .news .news-data .news-title {
+  margin-bottom: var(--spacing-4xs);
+}
+.page-body .latest-news .news .news-data .news-desc {
+  font-size: var(--fs-sm);
+}
+.page-body .latest-news .news .main-btn {
+  margin-left: auto;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  border: 1px solid var(--border);
+  align-self: flex-end;
+}
+/* LATEST TASKS */
+.page-body .latest-tasks .task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: var(--gap) 0;
+  text-transform: capitalize;
+}
+.page-body .latest-tasks .task:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+.page-body .latest-tasks .task .task-data {
+  flex: 1;
+}
+.page-body .latest-tasks .task .task-data .task-title {
+  margin-bottom: var(--spacing-4xs);
+}
+.page-body .latest-tasks .task .task-data .task-desc {
+  font-size: var(--fs-sm);
+}
+.page-body .latest-tasks .task .delete {
+  cursor: pointer;
+  color: var(--text2);
+  transition: var(--timing) ease;
+}
+.page-body .latest-tasks .task .delete:hover {
+  color: hsl(var(--danger-hue) 50% 50%);
+}
+.page-body .latest-tasks .task.done {
+  opacity: 50%;
+}
+.page-body .latest-tasks .task.done :is(.task-title, .task-desc) {
+  text-decoration: line-through;
+}
+/* RECENT ORDERS */
+.page-body .recent-orders .responsive-table {
+  overflow-x: auto;
+  margin-top: var(--spacing-lg);
+}
+.page-body .recent-orders table {
+  width: 100%;
+  min-width: 1000px;
+  border-spacing: 0;
+  margin-bottom: var(--spacing-md);
+  text-align: center;
+}
+.page-body .recent-orders table thead tr th {
+  padding: var(--spacing-2xs);
+  font-size: var(--fs-md);
+  color: var(--text1);
+}
+.page-body .recent-orders table tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--border);
+}
+.page-body .recent-orders table tbody tr td {
+  padding: var(--spacing-2xs);
+  font-size: var(--fs-sm);
+}
+.page-body .recent-orders table tbody tr td:not([class]) {
+  color: var(--text2);
+}

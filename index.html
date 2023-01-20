@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Dashboard Using HTML CSS and JavaScript</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <a href="#" class="sidebar-logo text-brand">
+          <svg
+            width="40"
+            height="30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.1369 26C22.8983 26 25.1842 23.7425 24.6732 21.0288C24.3528 19.3274 23.8679 17.6594 23.2235 16.0502C21.9602 12.8958 20.1087 10.0295 17.7745 7.61522C15.4403 5.2009 12.6692 3.28575 9.61949 1.97913C8.11383 1.33406 6.55481 0.843538 4.96489 0.512196C2.26154 -0.0511821 0 2.23858 0 5V21C0 23.7614 2.23858 26 5 26H20.1369Z"
+              fill="hsl(260 50% 50%)"
+            ></path>
+            <g>
+              <path
+                d="M13.7013 26C10.9399 26 8.65395 23.7425 9.16502 21.0288C9.48544 19.3274 9.97031 17.6594 10.6147 16.0502C11.878 12.8958 13.7295 10.0295 16.0637 7.61522C18.3979 5.2009 21.169 3.28575 24.2187 1.97913C25.7244 1.33406 27.2834 0.843538 28.8733 0.512196C31.5767 -0.0511821 33.8382 2.23858 33.8382 5V21C33.8382 23.7614 31.5996 26 28.8382 26H13.7013Z"
+                fill="hsl(260 60% 70%)"
+              ></path>
+            </g>
+          </svg>
+          <span class="logo-label">Analys</span>
+        </a>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="index.html" class="sidebar-link active">
+              <i class="fa-solid fa-home fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="" class="sidebar-link">
+              <i class="fa-solid fa-gear fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Settings</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="customer.html" class="sidebar-link">
+              <i class="fa-solid fa-user fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Profile</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="" class="sidebar-link">
+              <i class="fa-solid fa-diagram-project fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Projects</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="" class="sidebar-link">
+              <i class="fa-solid fa-graduation-cap fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Courses</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="" class="sidebar-link">
+              <i class="fa-solid fa-circle-user fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Friends</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="" class="sidebar-link">
+              <i class="fa-solid fa-file fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Files</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="" class="sidebar-link">
+              <i class="fa-solid fa-credit-card fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Plans</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="" class="sidebar-link">
+              <i class="fa-solid fa-right-from-bracket fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- MAIN -->
+      <main class="page-content">
+        <header class="page-header">
+          <form action="">
+            <i class="fa-solid fa-magnifying-glass fa-fw icon"></i>
+            <input
+              type="search"
+              name="search"
+              placeholder="Search here..."
+              class="input"
+            />
+          </form>
+          <div class="info">
+            <div class="toggle-theme">
+              <i class="fa-solid fa-moon fa-fw icon" id="toggleTheme"></i>
+            </div>
+            <div class="notification">
+              <i class="fa-solid fa-bell fa-fw icon"></i>
+              <span class="popup bg-info"></span>
+            </div>
+            <div class="profile">
+              <img src="imgs/profile.png" alt="" class="profile-img-sm" />
+            </div>
+          </div>
+        </header>
+        <div class="page-body">
+          <h1 class="page-title">Dashboard</h1>
+          <div class="wrapper">
+            <!-- WELCOME -->
+            <div class="welcome widget">
+              <div class="welcome-intro">
+                <div>
+                  <h2 class="widget-title">Welcome</h2>
+                  <p class="widget-subtitle">IssaKass</p>
+                </div>
+                <img src="imgs/welcome.png" alt="" />
+              </div>
+              <img src="imgs/profile.png" alt="" class="profile-img" />
+              <div class="welcome-data">
+                <div>
+                  <h4 class="clr-text2 title">Abdallah-Issa Kass</h4>
+                  <p class="clr-brand-muted desc">Full-Stack Developer</p>
+                </div>
+                <div>
+                  <h4 class="clr-text2 title">14</h4>
+                  <p class="clr-brand-muted desc">Projects</p>
+                </div>
+                <div>
+                  <h4 class="clr-text2 title">$0</h4>
+                  <p class="clr-brand-muted desc">Earned</p>
+                </div>
+              </div>
+              <a href="profile.html" class="btn-bg-brand main-btn">Profile</a>
+            </div>
+            <!-- QUICK DRAFT -->
+            <div class="quick-draft widget">
+              <h2 class="widget-title">Quick draft</h2>
+              <p class="widget-subtitle">Write A Draft For Your Ideas</p>
+              <form action="">
+                <input type="text" placeholder="Title" class="input" />
+                <textarea placeholder="Your Thought" class="input"></textarea>
+                <input
+                  type="submit"
+                  value="Save"
+                  class="btn-bg-brand main-btn"
+                />
+              </form>
+            </div>
+            <!-- YEARLY TARGETS -->
+            <div class="yearly-targets widget">
+              <h2 class="widget-title">Yearly targets</h2>
+              <p class="widget-subtitle">Targets of the year</p>
+              <div class="target sales">
+                <i class="fa-solid fa-dollar-sign fa-fw icon bg-brand"></i>
+                <div class="target-data">
+                  <p class="target-title clr-brand-muted">Sales</p>
+                  <strong class="target-earning">$25,000</strong>
+                </div>
+                <div class="target-progress" style="--progress: 81">
+                  <svg class="svg-indicator">
+                    <circle class="svg-indicator-track"></circle>
+                    <circle class="svg-indicator-indication"></circle>
+                  </svg>
+                  <span class="percentage">81%</span>
+                </div>
+              </div>
+              <div class="target expenses">
+                <i class="fa-solid fa-chart-simple fa-fw icon bg-danger"></i>
+                <div class="target-data">
+                  <p class="target-title clr-brand-muted">Expenses</p>
+                  <strong class="target-earning">$14,000</strong>
+                </div>
+                <div class="target-progress" style="--progress: 62">
+                  <svg class="svg-indicator">
+                    <circle class="svg-indicator-track"></circle>
+                    <circle class="svg-indicator-indication"></circle>
+                  </svg>
+                  <span class="percentage">62%</span>
+                </div>
+              </div>
+              <div class="target income">
+                <i class="fa-solid fa-arrow-trend-up fa-fw icon bg-success"></i>
+                <div class="target-data">
+                  <p class="target-title clr-brand-muted">Income</p>
+                  <strong class="target-earning">$10,000</strong>
+                </div>
+                <div class="target-progress" style="--progress: 44">
+                  <svg class="svg-indicator">
+                    <circle class="svg-indicator-track"></circle>
+                    <circle class="svg-indicator-indication"></circle>
+                  </svg>
+                  <span class="percentage">44%</span>
+                </div>
+              </div>
+            </div>
+            <!-- TICKETS STATISTICS -->
+            <div class="tickets-statistics widget">
+              <h2 class="widget-title">Tickets statistics</h2>
+              <p class="widget-subtitle">Everything about support tickets</p>
+              <div class="stats">
+                <div class="stat">
+                  <i
+                    class="fa-regular fa-rectangle-list fa-fw icon clr-warning"
+                  ></i>
+                  <strong class="number clr-text1">2500</strong>
+                  <small class="clr-brand-muted">Total</small>
+                </div>
+                <div class="stat">
+                  <i class="fa-solid fa-spinner fa-fw icon clr-info"></i>
+                  <strong class="number clr-text1">500</strong>
+                  <small class="clr-brand-muted">Pending</small>
+                </div>
+                <div class="stat">
+                  <i
+                    class="fa-regular fa-circle-check fa-fw icon clr-success"
+                  ></i>
+                  <strong class="number clr-text1">1900</strong>
+                  <small class="clr-brand-muted">Closed</small>
+                </div>
+                <div class="stat">
+                  <i
+                    class="fa-regular fa-rectangle-xmark fa-fw icon clr-danger"
+                  ></i>
+                  <strong class="number clr-text1">100</strong>
+                  <small class="clr-brand-muted">Deleted</small>
+                </div>
+              </div>
+            </div>
+            <!-- LATEST TASKS -->
+            <div class="latest-tasks widget">
+              <h2 class="widget-title">Latest tasks</h2>
+              <div class="task">
+                <div class="task-data">
+                  <h4 class="task-title clr-text2">Record one new video</h4>
+                  <p class="task-desc clr-brand-muted">
+                    Record python create exe project
+                  </p>
+                </div>
+                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
+              </div>
+              <div class="task">
+                <div class="task-data">
+                  <h4 class="task-title clr-text2">Write article</h4>
+                  <p class="task-desc clr-brand-muted">
+                    Write low level vs high level languages
+                  </p>
+                </div>
+                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
+              </div>
+              <div class="task">
+                <div class="task-data">
+                  <h4 class="task-title clr-text2">Finish project</h4>
+                  <p class="task-desc clr-brand-muted">
+                    Publish academy programming project
+                  </p>
+                </div>
+                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
+              </div>
+              <div class="task done">
+                <div class="task-data">
+                  <h4 class="task-title clr-text2">Attend the meeting</h4>
+                  <p class="task-desc clr-brand-muted">
+                    Attend the project business analysis meeting
+                  </p>
+                </div>
+                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
+              </div>
+              <div class="task">
+                <div class="task-data">
+                  <h4 class="task-title clr-text2">Finish lesson</h4>
+                  <p class="task-desc clr-brand-muted">
+                    Finish teaching flex box
+                  </p>
+                </div>
+                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
+              </div>
+            </div>
+            <!-- LATEST NEWS -->
+            <div class="latest-news widget">
+              <h2 class="widget-title">Latest news</h2>
+              <div class="news">
+                <img src="imgs/news-01.png" alt="" />
+                <div class="news-data">
+                  <h4 class="news-title clr-text2">Created SASS section</h4>
+                  <p class="news-desc clr-brand-muted">
+                    New SASS examples & tutorials
+                  </p>
+                </div>
+                <span class="main-btn clr-text2">3 Days Ago</span>
+              </div>
+              <div class="news">
+                <img src="imgs/news-02.png" alt="" />
+                <div class="news-data">
+                  <h4 class="news-title clr-text2">Changed the design</h4>
+                  <p class="news-desc clr-brand-muted">
+                    A brand new website design
+                  </p>
+                </div>
+                <span class="main-btn clr-text2">5 Days Ago</span>
+              </div>
+              <div class="news">
+                <img src="imgs/news-03.png" alt="" />
+                <div class="news-data">
+                  <h4 class="news-title clr-text2">Team increased</h4>
+                  <p class="news-desc clr-brand-muted">
+                    3 Developers joined the team
+                  </p>
+                </div>
+                <span class="main-btn clr-text2">6 Days Ago</span>
+              </div>
+            </div>
+            <!-- RECENT ORDERS -->
+            <div class="recent-orders widget">
+              <h2 class="widget-title">Recent orders</h2>
+              <div class="responsive-table">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Product Number</th>
+                      <th>Payment</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="js/orders.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
