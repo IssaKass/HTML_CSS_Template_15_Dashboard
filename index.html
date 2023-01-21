@@ -250,88 +250,33 @@
                 </div>
               </div>
             </div>
-            <!-- LATEST TASKS -->
-            <div class="latest-tasks widget">
-              <h2 class="widget-title">Latest tasks</h2>
-              <div class="task">
-                <div class="task-data">
-                  <h4 class="task-title clr-text2">Record one new video</h4>
-                  <p class="task-desc clr-brand-muted">
-                    Record python create exe project
-                  </p>
-                </div>
-                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
-              </div>
-              <div class="task">
-                <div class="task-data">
-                  <h4 class="task-title clr-text2">Write article</h4>
-                  <p class="task-desc clr-brand-muted">
-                    Write low level vs high level languages
-                  </p>
-                </div>
-                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
-              </div>
-              <div class="task">
-                <div class="task-data">
-                  <h4 class="task-title clr-text2">Finish project</h4>
-                  <p class="task-desc clr-brand-muted">
-                    Publish academy programming project
-                  </p>
-                </div>
-                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
-              </div>
-              <div class="task done">
-                <div class="task-data">
-                  <h4 class="task-title clr-text2">Attend the meeting</h4>
-                  <p class="task-desc clr-brand-muted">
-                    Attend the project business analysis meeting
-                  </p>
-                </div>
-                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
-              </div>
-              <div class="task">
-                <div class="task-data">
-                  <h4 class="task-title clr-text2">Finish lesson</h4>
-                  <p class="task-desc clr-brand-muted">
-                    Finish teaching flex box
-                  </p>
-                </div>
-                <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
-              </div>
-            </div>
             <!-- LATEST NEWS -->
             <div class="latest-news widget">
               <h2 class="widget-title">Latest news</h2>
-              <div class="news">
-                <img src="imgs/news-01.png" alt="" />
-                <div class="news-data">
-                  <h4 class="news-title clr-text2">Created SASS section</h4>
-                  <p class="news-desc clr-brand-muted">
-                    New SASS examples & tutorials
-                  </p>
-                </div>
-                <span class="main-btn clr-text2">3 Days Ago</span>
-              </div>
-              <div class="news">
-                <img src="imgs/news-02.png" alt="" />
-                <div class="news-data">
-                  <h4 class="news-title clr-text2">Changed the design</h4>
-                  <p class="news-desc clr-brand-muted">
-                    A brand new website design
-                  </p>
-                </div>
-                <span class="main-btn clr-text2">5 Days Ago</span>
-              </div>
-              <div class="news">
-                <img src="imgs/news-03.png" alt="" />
-                <div class="news-data">
-                  <h4 class="news-title clr-text2">Team increased</h4>
-                  <p class="news-desc clr-brand-muted">
-                    3 Developers joined the team
-                  </p>
-                </div>
-                <span class="main-btn clr-text2">6 Days Ago</span>
-              </div>
+              <div class="all-news"></div>
+            </div>
+            <!-- LATEST TASKS -->
+            <div class="latest-tasks widget">
+              <h2 class="widget-title">Latest tasks</h2>
+              <div class="tasks"></div>
+            </div>
+            <!-- TOP SEARCH ITEMS -->
+            <div class="search-items widget">
+              <h2 class="widget-title">Top search items</h2>
+              <table>
+                <thead>
+                  <tr>
+                    <th>Keyword</th>
+                    <th>Search count</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+            <!-- LATEST UPLOADS -->
+            <div class="latest-uploads widget">
+              <h2 class="widget-title">Latest uploads</h2>
+              <div class="uploads"></div>
             </div>
             <!-- RECENT ORDERS -->
             <div class="recent-orders widget">
@@ -355,6 +300,10 @@
         </div>
       </main>
     </div>
+    <script src="js/latestNews.js"></script>
+    <script src="js/latestTasks.js"></script>
+    <script src="js/searchItems.js"></script>
+    <script src="js/latestUploads.js"></script>
     <script src="js/orders.js"></script>
     <script src="js/main.js"></script>
   </body>

@@ -42,3 +42,24 @@ const Orders = [
     shipping: "Delivered",
   },
 ];
+
+// fill orders in table
+Orders.forEach((order) => {
+  const tr = document.createElement("tr");
+  const trContent = `
+    <td>${order.productName}</td>
+    <td>${order.productNumber}</td>
+    <td>${order.paymentSatuts}</td>
+    <td class="${
+      order.shipping === "Declined"
+        ? "clr-danger"
+        : order.shipping === "Pending"
+        ? "clr-warning"
+        : "clr-success"
+    }">${order.shipping}</td>
+    <td class="clr-info">Details</td>
+  `;
+
+  tr.innerHTML = trContent;
+  document.querySelector(".recent-orders table tbody").appendChild(tr);
+});

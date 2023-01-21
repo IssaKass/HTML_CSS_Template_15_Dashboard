@@ -11,28 +11,19 @@
     "news"
     "tickets"
     "tasks"
+    "search"
+    "uploads"
     "orders";
-}
-@media (min-width: 768px) {
-  .wrapper {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-areas:
-      "welcome welcome"
-      "draft yearly"
-      "tickets tickets"
-      "tasks tasks"
-      "news news"
-      "orders orders";
-  }
 }
 @media (min-width: 992px) {
   .wrapper {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-      "welcome welcome welcome draft draft draft"
-      "yearly yearly tickets tickets tasks tasks"
-      "news news news . . ."
-      "orders orders orders orders orders orders";
+      "welcome welcome draft draft"
+      "yearly yearly tickets tickets"
+      "news news tasks tasks"
+      "search search uploads uploads"
+      "orders orders orders orders";
   }
 }
 .page-body .welcome {
@@ -55,6 +46,12 @@
 }
 .page-body .recent-orders {
   grid-area: orders;
+}
+.page-body .search-items {
+  grid-area: search;
+}
+.latest-uploads {
+  grid-area: uploads;
 }
 /* WELCOME */
 .page-body .welcome {
@@ -217,20 +214,16 @@
 .page-body .latest-news .news img {
   width: 6em;
   border-radius: 0.6em;
-  margin-right: var(--spacing-2xs);
+  margin-right: var(--spacing-sm);
+}
+.page-body .latest-news .news .news-data {
+  flex: 1;
 }
 .page-body .latest-news .news .news-data .news-title {
   margin-bottom: var(--spacing-4xs);
 }
 .page-body .latest-news .news .news-data .news-desc {
   font-size: var(--fs-sm);
-}
-.page-body .latest-news .news .main-btn {
-  margin-left: auto;
-  font-size: var(--fs-xs);
-  font-weight: var(--fw-medium);
-  border: 1px solid var(--border);
-  align-self: flex-end;
 }
 /* LATEST TASKS */
 .page-body .latest-tasks .task {
@@ -266,6 +259,60 @@
 }
 .page-body .latest-tasks .task.done :is(.task-title, .task-desc) {
   text-decoration: line-through;
+}
+/* TOP SEARCH ITEMS */
+.page-body .search-items table {
+  margin-top: var(--spacing-lg);
+  width: 100%;
+}
+.page-body .search-items table tr th:first-child,
+.page-body .search-items table tr td:first-child {
+  text-align: left;
+}
+.page-body .search-items table tr th:last-child,
+.page-body .search-items table tr td:last-child {
+  text-align: right;
+}
+.page-body .search-items table thead th {
+  color: var(--text1);
+  padding-top: var(--spacing-3xs);
+  padding-bottom: var(--spacing-3xs);
+}
+.page-body .search-items table tbody td {
+  border-top: 1px solid var(--border);
+}
+.page-body .search-items table td {
+  padding-top: var(--spacing-xs);
+  padding-bottom: var(--spacing-xs);
+}
+.page-body .search-items table .keyword {
+  color: var(--text2);
+  font-size: var(--fs-sm);
+}
+.page-body .search-items table .search-count {
+  margin-left: auto;
+}
+/* LATEST UPLOADS */
+.latest-uploads .upload {
+  padding: var(--gap) 0;
+  display: flex;
+  align-items: center;
+}
+.latest-uploads .upload:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+.latest-uploads .upload .upload-img {
+  width: 3em;
+  margin-right: var(--spacing-sm);
+}
+.latest-uploads .upload .upload-data {
+  flex: 1;
+}
+.latest-uploads .upload .upload-data .upload-title {
+  margin-bottom: var(--spacing-6xs);
+}
+.latest-uploads .upload .upload-data .upload-desc {
+  font-size: var(--fs-sm);
 }
 /* RECENT ORDERS */
 .page-body .recent-orders .responsive-table {

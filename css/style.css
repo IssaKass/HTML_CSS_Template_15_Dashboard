@@ -227,7 +227,7 @@ body {
   width: fit-content;
   color: var(--clr-white);
 }
-.main-btn {
+[class*="main-btn"] {
   padding: var(--spacing-6xs) var(--spacing-2xs);
   border-radius: 0.4em;
   font-size: var(--fs-sm);
@@ -235,8 +235,14 @@ body {
   cursor: pointer;
   transition: background-color var(--timing) ease;
 }
-.main-btn:hover {
+[class*="main-btn"]:hover {
   --bg-lightness: 40%;
+}
+.main-btn-ghost {
+  color: var(--text2);
+  border: 1px solid var(--border);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
 }
 [class*="brand"] {
   --clr-hue: var(--brand-hue);
