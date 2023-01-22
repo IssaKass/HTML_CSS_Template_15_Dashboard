@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Dashboard Using HTML CSS and JavaScript</title>
+    <title>Dashboard</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -53,49 +53,49 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="" class="sidebar-link">
+            <a href="settings.html" class="sidebar-link">
               <i class="fa-solid fa-gear fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Settings</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="customer.html" class="sidebar-link">
+            <a href="profile.html" class="sidebar-link">
               <i class="fa-solid fa-user fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Profile</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="" class="sidebar-link">
+            <a href="projects.html" class="sidebar-link">
               <i class="fa-solid fa-diagram-project fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Projects</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="" class="sidebar-link">
+            <a href="courses.html" class="sidebar-link">
               <i class="fa-solid fa-graduation-cap fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Courses</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="" class="sidebar-link">
+            <a href="friends.html" class="sidebar-link">
               <i class="fa-solid fa-circle-user fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Friends</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="" class="sidebar-link">
+            <a href="files.html" class="sidebar-link">
               <i class="fa-solid fa-file fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Files</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="" class="sidebar-link">
+            <a href="plans.html" class="sidebar-link">
               <i class="fa-solid fa-credit-card fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Plans</span>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="" class="sidebar-link">
+            <a href="#" class="sidebar-link">
               <i class="fa-solid fa-right-from-bracket fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Logout</span>
             </a>
@@ -105,14 +105,8 @@
       <!-- MAIN -->
       <main class="page-content">
         <header class="page-header">
-          <form action="">
-            <i class="fa-solid fa-magnifying-glass fa-fw icon"></i>
-            <input
-              type="search"
-              name="search"
-              placeholder="Search here..."
-              class="input"
-            />
+          <form action="" class="search">
+            <input type="search" name="search" placeholder="Search here..." />
           </form>
           <div class="info">
             <div class="toggle-theme">
@@ -161,8 +155,8 @@
               <h2 class="widget-title">Quick draft</h2>
               <p class="widget-subtitle">Write A Draft For Your Ideas</p>
               <form action="">
-                <input type="text" placeholder="Title" class="input" />
-                <textarea placeholder="Your Thought" class="input"></textarea>
+                <input type="text" placeholder="Title" />
+                <textarea placeholder="Your Thought"></textarea>
                 <input
                   type="submit"
                   value="Save"
@@ -253,12 +247,12 @@
             <!-- LATEST NEWS -->
             <div class="latest-news widget">
               <h2 class="widget-title">Latest news</h2>
-              <div class="all-news"></div>
+              <div class="news-list"></div>
             </div>
             <!-- LATEST TASKS -->
             <div class="latest-tasks widget">
               <h2 class="widget-title">Latest tasks</h2>
-              <div class="tasks"></div>
+              <div class="tasks-list"></div>
             </div>
             <!-- TOP SEARCH ITEMS -->
             <div class="search-items widget">
@@ -276,20 +270,49 @@
             <!-- LATEST UPLOADS -->
             <div class="latest-uploads widget">
               <h2 class="widget-title">Latest uploads</h2>
-              <div class="uploads"></div>
+              <div class="uploads-list"></div>
             </div>
-            <!-- RECENT ORDERS -->
-            <div class="recent-orders widget">
-              <h2 class="widget-title">Recent orders</h2>
+            <!-- REMINDERS -->
+            <div class="reminders widget">
+              <h2 class="widget-title">Reminders</h2>
+              <div class="reminders-list"></div>
+            </div>
+            <!-- LATEST POSTS -->
+            <div class="latest-posts widget">
+              <h2 class="widget-title">Latest Posts</h2>
+              <div class="data">
+                <img src="imgs/profile.png" alt="" class="profile-img" />
+                <div>
+                  <h4 class="user clr-text2">Abdallah Issa Kass</h4>
+                  <p class="time clr-brand-muted">About 3 hours ago</p>
+                </div>
+              </div>
+              <p class="post clr-text2">
+                You Can Fool All Of The People Some Of The Time, And Some Of The
+                People All Of The Time, But You Can't Fool All Of The People All
+                Of The Time.
+              </p>
+              <div class="info">
+                <span class="clr-brand-muted"
+                  ><i class="fa-regular fa-heart fa-fw icon"></i>1.8K</span
+                >
+                <span class="clr-brand-muted"
+                  ><i class="fa-regular fa-comments fa-fw icon"></i>500</span
+                >
+              </div>
+            </div>
+            <!-- PROJECTS -->
+            <div class="projects widget">
+              <h2 class="widget-title">Projects</h2>
               <div class="responsive-table">
                 <table>
                   <thead>
                     <tr>
-                      <th>Product Name</th>
-                      <th>Product Number</th>
-                      <th>Payment</th>
+                      <th>Name</th>
+                      <th>Finish Date</th>
+                      <th>Client</th>
+                      <th>Price</th>
                       <th>Status</th>
-                      <th></th>
                     </tr>
                   </thead>
                   <tbody></tbody>
@@ -300,11 +323,14 @@
         </div>
       </main>
     </div>
+
+    <!-- JS -->
     <script src="js/latestNews.js"></script>
     <script src="js/latestTasks.js"></script>
     <script src="js/searchItems.js"></script>
     <script src="js/latestUploads.js"></script>
-    <script src="js/orders.js"></script>
+    <script src="js/reminders.js"></script>
+    <script src="js/projects.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

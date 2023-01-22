@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Files</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/files.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <a href="#" class="sidebar-logo text-brand">
+          <svg
+            width="40"
+            height="30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.1369 26C22.8983 26 25.1842 23.7425 24.6732 21.0288C24.3528 19.3274 23.8679 17.6594 23.2235 16.0502C21.9602 12.8958 20.1087 10.0295 17.7745 7.61522C15.4403 5.2009 12.6692 3.28575 9.61949 1.97913C8.11383 1.33406 6.55481 0.843538 4.96489 0.512196C2.26154 -0.0511821 0 2.23858 0 5V21C0 23.7614 2.23858 26 5 26H20.1369Z"
+              fill="hsl(260 50% 50%)"
+            ></path>
+            <g>
+              <path
+                d="M13.7013 26C10.9399 26 8.65395 23.7425 9.16502 21.0288C9.48544 19.3274 9.97031 17.6594 10.6147 16.0502C11.878 12.8958 13.7295 10.0295 16.0637 7.61522C18.3979 5.2009 21.169 3.28575 24.2187 1.97913C25.7244 1.33406 27.2834 0.843538 28.8733 0.512196C31.5767 -0.0511821 33.8382 2.23858 33.8382 5V21C33.8382 23.7614 31.5996 26 28.8382 26H13.7013Z"
+                fill="hsl(260 60% 70%)"
+              ></path>
+            </g>
+          </svg>
+          <span class="logo-label">Analys</span>
+        </a>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="index.html" class="sidebar-link">
+              <i class="fa-solid fa-home fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="settings.html" class="sidebar-link">
+              <i class="fa-solid fa-gear fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Settings</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="profile.html" class="sidebar-link">
+              <i class="fa-solid fa-user fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Profile</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="projects.html" class="sidebar-link">
+              <i class="fa-solid fa-diagram-project fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Projects</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="courses.html" class="sidebar-link">
+              <i class="fa-solid fa-graduation-cap fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Courses</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="friends.html" class="sidebar-link">
+              <i class="fa-solid fa-circle-user fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Friends</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="files.html" class="sidebar-link active">
+              <i class="fa-solid fa-file fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Files</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="plans.html" class="sidebar-link">
+              <i class="fa-solid fa-credit-card fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Plans</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-right-from-bracket fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- MAIN -->
+      <main class="page-content">
+        <header class="page-header">
+          <form action="" class="search">
+            <input type="search" name="search" placeholder="Search here..." />
+          </form>
+          <div class="info">
+            <div class="toggle-theme">
+              <i class="fa-solid fa-moon fa-fw icon" id="toggleTheme"></i>
+            </div>
+            <div class="notification">
+              <i class="fa-solid fa-bell fa-fw icon"></i>
+              <span class="popup bg-info"></span>
+            </div>
+            <div class="profile">
+              <img src="imgs/profile.png" alt="" class="profile-img-sm" />
+            </div>
+          </div>
+        </header>
+        <div class="page-body">
+          <h1 class="page-title">Files</h1>
+          <!-- COURSES -->
+          <div class="container">
+            <div class="files-stats widget">
+              <h2 class="widget-title">Files Statistics</h2>
+              <div class="stats">
+                <i class="fa-regular fa-file-pdf clr-info bg-info icon"></i>
+                <div class="data">
+                  <h5 class="type">PDF Files</h5>
+                  <span class="count clr-brand-muted">130 Files</span>
+                </div>
+                <span class="total-size clr-brand-muted">6.5GB</span>
+              </div>
+              <div class="stats">
+                <i class="fa-regular fa-images clr-success bg-success icon"></i>
+                <div class="data">
+                  <h5 class="type">Images</h5>
+                  <span class="count clr-brand-muted">155 Files</span>
+                </div>
+                <span class="total-size clr-brand-muted">3.5GB</span>
+              </div>
+            </div>
+            <div class="wrapper files"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JS -->
+    <script src="js/files.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

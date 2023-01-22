@@ -1,0 +1,105 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row-reverse;
+    align-items: flex-start;
+  }
+}
+.files-stats {
+  min-width: 16em;
+}
+.files {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--gap);
+}
+@media (min-width: 576px) {
+  .files {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .files {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .files {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .files-stats .widget-title {
+    text-align: center;
+  }
+}
+.files-stats .stats {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-4xs) var(--spacing-2xs);
+  border: 1px solid var(--border);
+  border-radius: 0.5em;
+  margin-top: var(--spacing-2xs);
+}
+.files-stats .stats .icon {
+  --bg-lightness: 85%;
+  --clr-lightness: 25%;
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  font-size: var(--fs-lg);
+  margin-right: var(--spacing-3xs);
+}
+.files-stats .stats .data {
+  flex: 1;
+}
+.files-stats .stats .type {
+  color: var(--text2);
+  font-weight: var(--fw-medium);
+}
+.files-stats .stats .count,
+.files-stats .stats .total-size {
+  font-size: calc(var(--fs-sm) * 0.85);
+}
+.files .file {
+  position: relative;
+}
+.files .file .download {
+  position: absolute;
+  top: 0.6em;
+  left: 0.6em;
+}
+.files .file .file-data {
+  text-align: center;
+}
+.files .file .file-img {
+  max-width: 4em;
+  margin: var(--spacing-sm) auto;
+}
+.files .file .file-name {
+  font-weight: var(--fw-medium);
+  color: var(--text1);
+}
+.files .file .file-author {
+  color: var(--text2);
+  font-size: var(--fs-sm);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+}
+.files .file .file-info {
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-xs);
+  padding-top: var(--spacing-sm);
+}

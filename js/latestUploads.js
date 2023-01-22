@@ -43,18 +43,19 @@ const LatestUploads = [
   },
 ];
 
+const uploadLayout = (upload) => `
+  <img src="${upload.imgFile}" alt="${upload.alt}" class="upload-img" />
+  <div class="upload-data">
+    <h4 class="upload-title clr-text2">${upload.title}</h4>
+    <p class="upload-desc clr-brand-muted">${upload.desc}</p>
+  </div>
+  <span class="main-btn-ghost clr-text2">${upload.size}</span>
+`;
+
 // fill latest uploads
 LatestUploads.forEach((upload) => {
-  const uploadLayout = document.createElement("div");
-  uploadLayout.classList.add("upload");
-  const uploadContent = `
-      <img src="${upload.imgFile}" alt="${upload.alt}" class="upload-img" />
-      <div class="upload-data">
-        <h4 class="upload-title clr-text2">${upload.title}</h4>
-        <p class="upload-desc clr-brand-muted">${upload.desc}</p>
-      </div>
-      <span class="main-btn-ghost clr-text2">${upload.size}</span>
-  `;
-  uploadLayout.innerHTML = uploadContent;
-  document.querySelector(".latest-uploads .uploads").appendChild(uploadLayout);
+  const item = document.createElement("div");
+  item.classList.add("upload");
+  item.innerHTML = uploadLayout(upload);
+  document.querySelector(".latest-uploads .uploads-list").appendChild(item);
 });

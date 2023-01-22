@@ -7,23 +7,26 @@
   grid-template-areas:
     "welcome"
     "draft"
-    "yearly"
-    "news"
+    "targets"
     "tickets"
+    "news"
     "tasks"
     "search"
     "uploads"
-    "orders";
+    "reminders"
+    "posts"
+    "projects";
 }
 @media (min-width: 992px) {
   .wrapper {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
       "welcome welcome draft draft"
-      "yearly yearly tickets tickets"
+      "targets targets tickets tickets"
       "news news tasks tasks"
       "search search uploads uploads"
-      "orders orders orders orders";
+      "reminders reminders posts posts"
+      "projects projects projects projects";
   }
 }
 .page-body .welcome {
@@ -33,7 +36,7 @@
   grid-area: draft;
 }
 .page-body .yearly-targets {
-  grid-area: yearly;
+  grid-area: targets;
 }
 .page-body .latest-news {
   grid-area: news;
@@ -44,14 +47,20 @@
 .page-body .latest-tasks {
   grid-area: tasks;
 }
-.page-body .recent-orders {
-  grid-area: orders;
-}
 .page-body .search-items {
   grid-area: search;
 }
-.latest-uploads {
+.page-body .latest-uploads {
   grid-area: uploads;
+}
+.page-body .reminders {
+  grid-area: reminders;
+}
+.page-body .latest-posts {
+  grid-area: posts;
+}
+.page-body .projects {
+  grid-area: projects;
 }
 /* WELCOME */
 .page-body .welcome {
@@ -265,25 +274,23 @@
   margin-top: var(--spacing-lg);
   width: 100%;
 }
-.page-body .search-items table tr th:first-child,
-.page-body .search-items table tr td:first-child {
+.page-body .search-items table th,
+.page-body .search-items table td {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+.page-body .search-items table tr :first-child {
   text-align: left;
 }
-.page-body .search-items table tr th:last-child,
-.page-body .search-items table tr td:last-child {
+.page-body .search-items table tr :last-child {
   text-align: right;
 }
 .page-body .search-items table thead th {
   color: var(--text1);
-  padding-top: var(--spacing-3xs);
-  padding-bottom: var(--spacing-3xs);
+  font-weight: var(--fw-medium);
 }
 .page-body .search-items table tbody td {
   border-top: 1px solid var(--border);
-}
-.page-body .search-items table td {
-  padding-top: var(--spacing-xs);
-  padding-bottom: var(--spacing-xs);
 }
 .page-body .search-items table .keyword {
   color: var(--text2);
@@ -293,51 +300,105 @@
   margin-left: auto;
 }
 /* LATEST UPLOADS */
-.latest-uploads .upload {
+.page-body .latest-uploads .upload {
   padding: var(--gap) 0;
   display: flex;
   align-items: center;
 }
-.latest-uploads .upload:not(:last-child) {
+.page-body .latest-uploads .upload:not(:last-child) {
   border-bottom: 1px solid var(--border);
 }
-.latest-uploads .upload .upload-img {
+.page-body .latest-uploads .upload .upload-img {
   width: 3em;
   margin-right: var(--spacing-sm);
 }
-.latest-uploads .upload .upload-data {
+.page-body .latest-uploads .upload .upload-data {
   flex: 1;
 }
-.latest-uploads .upload .upload-data .upload-title {
+.page-body .latest-uploads .upload .upload-data .upload-title {
   margin-bottom: var(--spacing-6xs);
 }
-.latest-uploads .upload .upload-data .upload-desc {
+.page-body .latest-uploads .upload .upload-data .upload-desc {
   font-size: var(--fs-sm);
 }
-/* RECENT ORDERS */
-.page-body .recent-orders .responsive-table {
+/* REMINDERS */
+.page-body .reminders .reminder {
+  padding: var(--gap) 0;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+}
+.page-body .reminders .reminder .reminder-key {
+  --size: 1.2em;
+  width: var(--size);
+  height: var(--size);
+  border-radius: var(--rad-circle);
+  margin-right: var(--spacing-md);
+}
+.page-body .reminders .reminder .reminder-title {
+  margin-bottom: var(--spacing-6xs);
+}
+.page-body .reminders .reminder .reminder-schedule {
+  font-size: var(--fs-xs);
+}
+/* LATEST POSTS */
+.page-body .latest-posts .data,
+.page-body .latest-posts .info {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-2xs) 0;
+}
+.page-body .latest-posts .data .profile-img {
+  margin-right: var(--spacing-sm);
+}
+.page-body .latest-posts .data .user {
+  margin-bottom: var(--spacing-4xs);
+}
+.page-body .latest-posts .data .time {
+  font-size: var(--fs-sm);
+}
+.page-body .latest-posts .post {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--spacing-xl);
+  line-height: var(--line-height);
+}
+.page-body .latest-posts .info {
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+}
+.page-body .latest-posts .info .icon {
+  margin-right: var(--spacing-6xs);
+}
+/* PROJECTS */
+.page-body .projects .responsive-table {
   overflow-x: auto;
   margin-top: var(--spacing-lg);
+  border-radius: var(--rad-md);
+  border: 1px solid var(--border);
 }
-.page-body .recent-orders table {
+.page-body .projects table {
   width: 100%;
   min-width: 1000px;
-  border-spacing: 0;
-  margin-bottom: var(--spacing-md);
-  text-align: center;
+  border-collapse: collapse;
+  text-align: left;
 }
-.page-body .recent-orders table thead tr th {
-  padding: var(--spacing-2xs);
+.page-body .projects table thead {
+  background-color: var(--neutral);
+}
+.page-body .projects table tr th,
+.page-body .projects table tr td {
+  padding: var(--spacing-sm);
+}
+.page-body .projects table thead tr th {
   font-size: var(--fs-md);
   color: var(--text1);
 }
-.page-body .recent-orders table tbody tr:not(:last-child) td {
-  border-bottom: 1px solid var(--border);
-}
-.page-body .recent-orders table tbody tr td {
-  padding: var(--spacing-2xs);
+.page-body .projects table tbody tr td {
   font-size: var(--fs-sm);
-}
-.page-body .recent-orders table tbody tr td:not([class]) {
+  border-top: 1px solid var(--border);
   color: var(--text2);
+}
+.page-body .projects table tbody .status {
+  font-size: var(--fs-xs);
 }

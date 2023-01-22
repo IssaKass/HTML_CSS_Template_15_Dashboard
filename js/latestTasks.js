@@ -26,18 +26,19 @@ const LatestTasks = [
   },
 ];
 
+const taskLayout = (task) => `
+  <div class="task-data">
+    <h4 class="task-title clr-text2">${task.title}</h4>
+    <p class="task-desc clr-brand-muted">${task.title}</p>
+  </div>
+  <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
+  `;
+
 // fill latest tasks
 LatestTasks.forEach((task) => {
-  const taskLayout = document.createElement("div");
-  taskLayout.classList.add("task");
-  if (task.done) taskLayout.classList.add("done");
-  const taskContent = `
-    <div class="task-data">
-        <h4 class="task-title clr-text2">${task.title}</h4>
-            <p class="task-desc clr-brand-muted">${task.title}</p>
-    </div>
-    <i class="fa-regular fa-trash-can fa-fw fa-fw delete"></i>
-  `;
-  taskLayout.innerHTML = taskContent;
-  document.querySelector(".latest-tasks .tasks").appendChild(taskLayout);
+  const item = document.createElement("div");
+  item.classList.add("task");
+  if (task.done) item.classList.add("done");
+  item.innerHTML = taskLayout(task);
+  document.querySelector(".latest-tasks .tasks-list").appendChild(item);
 });
