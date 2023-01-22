@@ -1,3 +1,16 @@
+const units = ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+function niceBytes(x) {
+  let l = 0,
+    n = parseInt(x, 10) || 0;
+
+  while (n >= 1024 && ++l) {
+    n = n / 1024;
+  }
+
+  return n.toFixed(n < 10 && l > 0 ? 1 : 0) + " " + units[l];
+}
+
 const filesContainer = document.querySelector(".files");
 
 const Files = [
@@ -6,42 +19,126 @@ const Files = [
     extension: "pdf",
     author: "Elzero",
     uploadDate: new Date("2023-01-15"),
-    size: "5.5MB",
+    size: 5767168,
   },
   {
     name: "my-file",
     extension: "avi",
     author: "Admin",
     uploadDate: new Date("2023-01-12"),
-    size: "6.8MB",
+    size: 7130112,
   },
   {
     name: "my-file",
     extension: "eps",
     author: "Uploader",
     uploadDate: new Date("2023-01-14"),
-    size: "2.7MB",
+    size: 2725888,
   },
   {
     name: "my-file",
     extension: "psd",
     author: "IssaKass",
     uploadDate: new Date("2023-01-16"),
-    size: "15.1MB",
+    size: 15833088,
   },
   {
     name: "my-file",
     extension: "dll",
     author: "Coder",
     uploadDate: new Date("2023-01-09"),
-    size: "2.2MB",
+    size: 2614272,
   },
   {
     name: "my-file",
     extension: "png",
     author: "Designer",
     uploadDate: new Date("2023-01-09"),
-    size: "210KB",
+    size: 215040,
+  },
+  {
+    name: "my-file",
+    extension: "zip",
+    author: "Coder",
+    uploadDate: new Date("2022-12-15"),
+    size: 572522496,
+  },
+  {
+    name: "my-file",
+    extension: "dll",
+    author: "Coder",
+    uploadDate: new Date("2023-01-01"),
+    size: 2306867,
+  },
+  {
+    name: "my-file",
+    extension: "png",
+    author: "Designer",
+    uploadDate: new Date("2022-12-28"),
+    size: 1363148,
+  },
+  {
+    name: "my-file",
+    extension: "avi",
+    author: "Admin",
+    uploadDate: new Date("2022-12-31"),
+    size: 10066329,
+  },
+  {
+    name: "my-file",
+    extension: "psd",
+    author: "Designer",
+    uploadDate: new Date("2023-01-13"),
+    size: 18664652,
+  },
+  {
+    name: "my-file",
+    extension: "eps",
+    author: "Designer",
+    uploadDate: new Date("2022-12-12"),
+    size: 3145728,
+  },
+  {
+    name: "my-file",
+    extension: "zip",
+    author: "Coder",
+    uploadDate: new Date("2022-12-03"),
+    size: 1288490188,
+  },
+  {
+    name: "my-file",
+    extension: "pdf",
+    author: "User",
+    uploadDate: new Date("2022-11-16"),
+    size: 14050918,
+  },
+  {
+    name: "my-file",
+    extension: "psd",
+    author: "IssaKass",
+    uploadDate: new Date("2022-11-05"),
+    size: 21390950,
+  },
+  {
+    name: "my-file",
+    extension: "png",
+    author: "IssaKass",
+    uploadDate: new Date("2023-01-06"),
+    size: 806912,
+  },
+  {
+    name: "my-file",
+    extension: "avi",
+    author: "Admin",
+    uploadDate: new Date("2023-01-02"),
+    size: 32925286,
+  },
+  {
+    name: "my-file",
+    extension: "dll",
+    author: "Coder",
+    uploadDate: new Date("2023-01-05"),
+    size: 12582912,
   },
 ];
 
@@ -55,13 +152,65 @@ const fileLayout = (file) => `
 	<p class="file-author">${file.author}</p>
 	<div class="file-info clr-brand-muted">
 		<span class="file-upload-date">${file.uploadDate.toLocaleDateString()}</span>
-		<span class="file-size">${file.size}</span>
+		<span class="file-size">${niceBytes(file.size)}</span>
 	</div>
 `;
 
 Files.forEach((file) => {
-  item = document.createElement("div");
+  let item = document.createElement("div");
   item.classList.add("file", "widget");
   item.innerHTML = fileLayout(file);
   filesContainer.appendChild(item);
+});
+
+function getFilesCount(...types) {
+  let count = 0;
+  types.forEach((type) => {
+    count += Files.filter((file) => file.extension === type).length;
+  });
+  return count;
+}
+
+function getAllFilesCount() {
+  return Files.length;
+}
+
+function getFilesSizes(...types) {
+  let totalSize = 0;
+  types.forEach((type) => {
+    var arr = Files.filter((file) => file.extension === type);
+    arr.forEach((e) => (totalSize += e.size));
+  });
+  return totalSize;
+}
+
+function getFilesAllSizes() {
+  let totalSize = 0;
+  Files.forEach((file) => {
+    totalSize += file.size;
+  });
+  return totalSize;
+}
+
+let stats = document.querySelectorAll(".files-stats .stats .stat");
+
+stats.forEach((stat) => {
+  let count = stat.querySelector(".count");
+  let totalSize = stat.querySelector(".total-size");
+  if (stat.classList.contains("pdf")) {
+    count.textContent = `${getFilesCount("pdf")} Files`;
+    totalSize.textContent = `${niceBytes(getFilesSizes("pdf"))}`;
+  } else if (stat.classList.contains("images")) {
+    count.textContent = `${getFilesCount("png")} Files`;
+    totalSize.textContent = `${niceBytes(getFilesSizes("png"))}`;
+  } else if (stat.classList.contains("dll")) {
+    count.textContent = `${getFilesCount("dll")} Files`;
+    totalSize.textContent = `${niceBytes(getFilesSizes("dll"))}`;
+  } else if (stat.classList.contains("avi")) {
+    count.textContent = `${getFilesCount("avi")} Files`;
+    totalSize.textContent = `${niceBytes(getFilesSizes("avi"))}`;
+  } else if (stat.classList.contains("all")) {
+    count.textContent = `${getAllFilesCount()} Files`;
+    totalSize.textContent = `${niceBytes(getFilesAllSizes())}`;
+  }
 });

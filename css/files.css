@@ -1,4 +1,5 @@
 .container {
+  --fs-adjust: calc(var(--fs-sm) * 0.85);
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -10,7 +11,7 @@
   }
 }
 .files-stats {
-  min-width: 16em;
+  min-width: 15em;
 }
 .files {
   flex: 1;
@@ -40,14 +41,25 @@
   }
 }
 .files-stats .stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
+  gap: var(--gap);
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+@media (min-width: 768px) {
+  .files-stats .stats {
+    grid-template-columns: 1fr;
+  }
+}
+.files-stats .stat {
   display: flex;
   align-items: center;
   padding: var(--spacing-4xs) var(--spacing-2xs);
   border: 1px solid var(--border);
   border-radius: 0.5em;
-  margin-top: var(--spacing-2xs);
 }
-.files-stats .stats .icon {
+.files-stats .stat .icon {
   --bg-lightness: 85%;
   --clr-lightness: 25%;
   --size: 40px;
@@ -59,16 +71,25 @@
   font-size: var(--fs-lg);
   margin-right: var(--spacing-3xs);
 }
-.files-stats .stats .data {
+.files-stats .stat .data {
   flex: 1;
 }
-.files-stats .stats .type {
+.files-stats .stat .type {
   color: var(--text2);
   font-weight: var(--fw-medium);
 }
-.files-stats .stats .count,
-.files-stats .stats .total-size {
-  font-size: calc(var(--fs-sm) * 0.85);
+.files-stats .stat .count,
+.files-stats .stat .total-size {
+  font-size: var(--fs-adjust);
+}
+.files-stats .main-btn {
+  font-size: var(--fs-sm);
+  margin-left: auto;
+  margin-right: auto;
+}
+.files-stats .main-btn .icon {
+  margin-right: var(--spacing-4xs);
+  font-size: var(--fs-xs);
 }
 .files .file {
   position: relative;
@@ -77,6 +98,11 @@
   position: absolute;
   top: 0.6em;
   left: 0.6em;
+  cursor: pointer;
+  transition: var(--timing) ease;
+}
+.files .file .download:hover {
+  color: var(--brand);
 }
 .files .file .file-data {
   text-align: center;
@@ -91,7 +117,7 @@
 }
 .files .file .file-author {
   color: var(--text2);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-adjust);
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
 }
