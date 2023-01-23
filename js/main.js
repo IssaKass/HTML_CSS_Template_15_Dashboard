@@ -1,19 +1,25 @@
-// toggle theme
-document.body.setAttribute("color-scheme", "light");
+let darkMode = localStorage.getItem("darkMode");
+const darkModeToggle = document.getElementById("dark-mode-toggle");
 
-const btnToggleTheme = document.getElementById("toggleTheme");
+const enableDarkMode = () => {
+  document.body.classList.add("darkmode");
+  localStorage.setItem("darkMode", "enabled");
+};
 
-function toggleTheme() {
-  document.body.setAttribute(
-    "color-scheme",
-    document.body.getAttribute("color-scheme") === "light" ? "dark" : "light"
-  );
-  btnToggleTheme.classList.contains("fa-sun")
-    ? btnToggleTheme.classList.replace("fa-sun", "fa-moon")
-    : btnToggleTheme.classList.replace("fa-moon", "fa-sun");
+const disableDarkMode = () => {
+  document.body.classList.remove("darkmode");
+  localStorage.setItem("darkMode", null);
+};
+
+if (darkMode === "enabled") {
+  enableDarkMode();
 }
 
-btnToggleTheme.addEventListener("click", toggleTheme);
-
-
-
+darkModeToggle.addEventListener("click", () => {
+  darkMode = localStorage.getItem("darkMode");
+  if (darkMode !== "enabled") {
+    enableDarkMode();
+  } else {
+    disableDarkMode();
+  }
+});

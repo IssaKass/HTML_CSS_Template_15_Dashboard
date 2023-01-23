@@ -1,45 +1,58 @@
+const units = ["bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+function niceBytes(x) {
+  let l = 0,
+    n = parseInt(x, 10) || 0;
+
+  while (n >= 1024 && ++l) {
+    n = n / 1024;
+  }
+
+  return n.toFixed(n < 10 && l > 0 ? 1 : 0) + " " + units[l];
+}
+
 const LatestUploads = [
   {
     title: "my-file.pdf",
     desc: "Elzero",
     imgFile: "imgs/pdf.svg",
     alt: "PDF icon",
-    size: "2.9mb",
+    size: 3040870,
   },
   {
     title: "My-Video-File.avi",
     desc: "Admin",
     imgFile: "imgs/avi.svg",
     alt: "AVI icon",
-    size: "4.9mb",
+    size: 5138022,
   },
   {
     title: "My-Psd-File.pdf",
     desc: "Osama",
     imgFile: "imgs/psd.svg",
     alt: "PSD icon",
-    size: "4.5mb",
+    size: 4718592,
   },
   {
     title: "My-Zip-File.pdf",
     desc: "User",
     imgFile: "imgs/zip.svg",
     alt: "ZIP icon",
-    size: "8.9mb",
+    size: 9332326,
   },
   {
     title: "My-DLL-File.pdf",
     desc: "Admin",
     imgFile: "imgs/dll.svg",
     alt: "DLL icon",
-    size: "4.9mb",
+    size: 5138022,
   },
   {
     title: "My-Eps-File.pdf",
     desc: "Designer",
     imgFile: "imgs/eps.svg",
     alt: "EPS icon",
-    size: "8.9mb",
+    size: 9332326,
   },
 ];
 
@@ -49,7 +62,7 @@ const uploadLayout = (upload) => `
     <h4 class="upload-title clr-text2">${upload.title}</h4>
     <p class="upload-desc clr-brand-muted">${upload.desc}</p>
   </div>
-  <span class="main-btn-ghost clr-text2">${upload.size}</span>
+  <span class="main-btn-ghost clr-text2">${niceBytes(upload.size)}</span>
 `;
 
 // fill latest uploads
