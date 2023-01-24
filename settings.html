@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/settings.css" />
+  </head>
+  <body>
+    <div class="page">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <a href="#" class="sidebar-logo text-brand">
+          <svg
+            width="40"
+            height="30"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.1369 26C22.8983 26 25.1842 23.7425 24.6732 21.0288C24.3528 19.3274 23.8679 17.6594 23.2235 16.0502C21.9602 12.8958 20.1087 10.0295 17.7745 7.61522C15.4403 5.2009 12.6692 3.28575 9.61949 1.97913C8.11383 1.33406 6.55481 0.843538 4.96489 0.512196C2.26154 -0.0511821 0 2.23858 0 5V21C0 23.7614 2.23858 26 5 26H20.1369Z"
+              fill="hsl(260 50% 50%)"
+            ></path>
+            <g>
+              <path
+                d="M13.7013 26C10.9399 26 8.65395 23.7425 9.16502 21.0288C9.48544 19.3274 9.97031 17.6594 10.6147 16.0502C11.878 12.8958 13.7295 10.0295 16.0637 7.61522C18.3979 5.2009 21.169 3.28575 24.2187 1.97913C25.7244 1.33406 27.2834 0.843538 28.8733 0.512196C31.5767 -0.0511821 33.8382 2.23858 33.8382 5V21C33.8382 23.7614 31.5996 26 28.8382 26H13.7013Z"
+                fill="hsl(260 60% 70%)"
+              ></path>
+            </g>
+          </svg>
+          <span class="logo-label">Analys</span>
+        </a>
+        <ul class="sidebar-menu">
+          <li class="sidebar-item">
+            <a href="index.html" class="sidebar-link">
+              <i class="fa-solid fa-home fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Dashboard</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="settings.html" class="sidebar-link active">
+              <i class="fa-solid fa-gear fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Settings</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="profile.html" class="sidebar-link">
+              <i class="fa-solid fa-user fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Profile</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="projects.html" class="sidebar-link">
+              <i class="fa-solid fa-diagram-project fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Projects</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="courses.html" class="sidebar-link">
+              <i class="fa-solid fa-graduation-cap fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Courses</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="friends.html" class="sidebar-link">
+              <i class="fa-solid fa-circle-user fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Friends</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="files.html" class="sidebar-link">
+              <i class="fa-solid fa-file fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Files</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="plans.html" class="sidebar-link">
+              <i class="fa-solid fa-credit-card fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Plans</span>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link">
+              <i class="fa-solid fa-right-from-bracket fa-fw sidebar-icon"></i>
+              <span class="sidebar-label">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <!-- MAIN -->
+      <main class="page-content">
+        <header class="page-header">
+          <form action="" class="search">
+            <input type="search" name="search" placeholder="Search here..." />
+          </form>
+          <div class="info">
+            <div class="dark-mode-toggle" id="dark-mode-toggle">
+              <i class="fa-solid fa-circle-half-stroke fa-fw icon"></i>
+            </div>
+            <div class="notification">
+              <i class="fa-solid fa-bell fa-fw icon"></i>
+              <span class="popup bg-info"></span>
+            </div>
+            <div class="profile">
+              <img src="imgs/profile.png" alt="" class="profile-img-sm" />
+            </div>
+          </div>
+        </header>
+        <div class="page-body">
+          <h1 class="page-title">Settings</h1>
+          <div class="wrapper">
+            <!-- SITE CONTROL -->
+            <div class="site-control widget">
+              <h2 class="widget-title">Site Control</h2>
+              <p class="widget-subtitle">
+                Control the website if there is maintenance
+              </p>
+              <div class="data">
+                <div class="text">
+                  <h4 class="title">Website Control</h4>
+                  <p class="desc clr-muted">
+                    Open/Close Website And Type The Reason
+                  </p>
+                </div>
+                <div class="toggle">
+                  <input type="checkbox" name="" id="check" />
+                  <label for="check"></label>
+                </div>
+              </div>
+              <textarea placeholder="Close Message Content"></textarea>
+            </div>
+            <!-- GENERAL INFO -->
+            <div class="general-info widget">
+              <h2 class="widget-title">General Info</h2>
+              <p class="widget-subtitle">
+                General information about your account
+              </p>
+              <form action="">
+                <div class="input-box">
+                  <label for="firstName" class="clr-muted">First Name</label>
+                  <input
+                    type="text"
+                    name="firstName"
+                    id="firstName"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div class="input-box">
+                  <label for="lastName" class="clr-muted">Last Name</label>
+                  <input
+                    type="text"
+                    name="lastName"
+                    id="lastName"
+                    placeholder="Last Name"
+                  />
+                </div>
+                <div class="input-box">
+                  <label for="email" class="clr-muted">Email</label>
+                  <div>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value="issakass02@gmail.com"
+                      disabled
+                    />
+                    <input
+                      type="submit"
+                      value="Change"
+                      class="main-btn bg-brand"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- SECURITY INFO -->
+            <div class="security-info widget">
+              <h2 class="widget-title">Security Info</h2>
+              <p class="widget-subtitle">
+                Security information about your account
+              </p>
+              <div class="box">
+                <div class="text">
+                  <h4 class="title">Password</h4>
+                  <p class="desc clr-muted">Last Change On 05/01/2023</p>
+                </div>
+                <a href="#" class="main-btn bg-brand">Change</a>
+              </div>
+              <div class="box">
+                <div class="text">
+                  <h4 class="title">Two-Factor Authentication</h4>
+                  <p class="desc clr-muted">Enable/Disable The Feature</p>
+                </div>
+                <div class="toggle">
+                  <input type="checkbox" id="security-checkbox" checked />
+                  <label for="security-checkbox"></label>
+                </div>
+              </div>
+              <div class="box">
+                <div class="text">
+                  <h4 class="title">Devices</h4>
+                  <p class="desc clr-muted">Check The Login Devices List</p>
+                </div>
+                <a href="#" class="main-btn bg-neutral">Devices</a>
+              </div>
+            </div>
+            <!-- SOCIAL INFO -->
+            <div class="social-info widget">
+              <h2 class="widget-title">Social Info</h2>
+              <p class="widget-subtitle">Social Media Information</p>
+              <div class="socials clr-muted">
+                <div class="social">
+                  <i class="fa-brands fa-twitter fa-fw icon"></i>
+                  <input type="text" placeholder="Twitter Username" />
+                </div>
+                <div class="social">
+                  <i class="fa-brands fa-facebook-f fa-fw icon"></i>
+                  <input type="text" placeholder="Facebook Username" />
+                </div>
+                <div class="social">
+                  <i class="fa-brands fa-linkedin fa-fw icon"></i>
+                  <input type="text" placeholder="Linkedin Username" />
+                </div>
+                <div class="social">
+                  <i class="fa-brands fa-youtube fa-fw icon"></i>
+                  <input type="text" placeholder="Youtube Username" />
+                </div>
+              </div>
+            </div>
+            <!-- WIDGETS CONTROL -->
+            <div class="widgets-control widget">
+              <h2 class="widget-title">Widgets Control</h2>
+              <p class="widget-subtitle">Show/Hide Widgets</p>
+              <div class="controls">
+                <div class="control checkbox">
+                  <input type="checkbox" id="ctrl1" checked />
+                  <label for="ctrl1">Quick draft</label>
+                </div>
+                <div class="control checkbox">
+                  <input type="checkbox" id="ctrl2" checked />
+                  <label for="ctrl2">Yearly targets</label>
+                </div>
+                <div class="control checkbox">
+                  <input type="checkbox" id="ctrl3" checked />
+                  <label for="ctrl3">Tickets statistics</label>
+                </div>
+                <div class="control checkbox">
+                  <input type="checkbox" id="ctrl4" checked />
+                  <label for="ctrl4">Latest news</label>
+                </div>
+                <div class="control checkbox">
+                  <input type="checkbox" id="ctrl5" />
+                  <label for="ctrl5">Latest tasks</label>
+                </div>
+                <div class="control checkbox">
+                  <input type="checkbox" id="ctrl6" checked />
+                  <label for="ctrl6">Top search items</label>
+                </div>
+              </div>
+            </div>
+            <!-- BACKUP MANAGER -->
+            <div class="backup-manager widget">
+              <h2 class="widget-title">Backup Manager</h2>
+              <p class="widget-subtitle">Control Backup Time And Location</p>
+              <div class="period">
+                <div class="radio">
+                  <input type="radio" name="period" id="daily" checked />
+                  <label for="daily">Daily</label>
+                </div>
+                <div class="radio">
+                  <input type="radio" name="period" id="weekly" />
+                  <label for="weekly">Weekly</label>
+                </div>
+                <div class="radio">
+                  <input type="radio" name="period" id="monthly" />
+                  <label for="monthly">Monthly</label>
+                </div>
+              </div>
+              <div class="servers">
+                <div class="server">
+                  <input type="radio" name="server" id="megaman" />
+                  <label for="megaman">
+                    <i class="fa-solid fa-server fa-fw icon"></i>
+                    <span>Megaman</span>
+                  </label>
+                </div>
+                <div class="server">
+                  <input type="radio" name="server" id="zero" checked />
+                  <label for="zero">
+                    <i class="fa-solid fa-server fa-fw icon"></i>
+                    <span>Zero</span>
+                  </label>
+                </div>
+                <div class="server">
+                  <input type="radio" name="server" id="sigma" />
+                  <label for="sigma">
+                    <i class="fa-solid fa-server fa-fw icon"></i>
+                    <span>Sigma</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>

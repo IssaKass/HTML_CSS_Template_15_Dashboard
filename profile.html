@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Files</title>
+    <title>Profile</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -19,7 +19,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/files.css" />
+    <link rel="stylesheet" href="css/profile.css" />
   </head>
   <body>
     <div class="page">
@@ -59,7 +59,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="profile.html" class="sidebar-link">
+            <a href="profile.html" class="sidebar-link active">
               <i class="fa-solid fa-user fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Profile</span>
             </a>
@@ -83,7 +83,7 @@
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="files.html" class="sidebar-link active">
+            <a href="files.html" class="sidebar-link">
               <i class="fa-solid fa-file fa-fw sidebar-icon"></i>
               <span class="sidebar-label">Files</span>
             </a>
@@ -117,29 +117,107 @@
               <span class="popup bg-info"></span>
             </div>
             <div class="profile">
-              <img src="imgs/profile.png" alt="" class="profile-img-sm" />
+              <img src="imgs/profile.png" alt-="" class="profile-img-sm" />
             </div>
           </div>
         </header>
         <div class="page-body">
-          <h1 class="page-title">Files</h1>
-          <!-- COURSES -->
-          <div class="container">
-            <div class="files-stats widget">
-              <h2 class="widget-title">Files Statistics</h2>
-              <div class="stats"></div>
-              <a href="#" class="main-btn bg-brand">
-                <i class="fa-solid fa-angles-up fa-fw icon"></i>Upload
-              </a>
+          <h1 class="page-title">Profile</h1>
+          <div class="wrapper">
+            <!-- PROFILE -->
+            <div class="profile widget">
+              <div class="profile-info">
+                <img src="imgs/profile.png" alt="" class="profile-img" />
+                <h3 class="user">Issa Kass</h3>
+              </div>
+              <div class="profile-data">
+                <div class="box">
+                  <h4>General Information</h4>
+                  <div>
+                    <p>
+                      Full Name:
+                      <span class="clr-muted">Abdallah-Issa Kass</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>Gender: <span class="clr-muted">Male</span></p>
+                  </div>
+                  <div>
+                    <p>Country: <span class="clr-muted">Lebanon</span></p>
+                  </div>
+                </div>
+                <div class="box">
+                  <h4>Personal Information</h4>
+                  <div>
+                    <p>
+                      Email: <span class="clr-muted">issakass02@gmail.com</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>Phone: <span class="clr-muted">+961-71-174747</span></p>
+                  </div>
+                  <div>
+                    <p>
+                      Date Of Birth: <span class="clr-muted">25/12/2002</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="box">
+                  <h4>Job Information</h4>
+                  <div>
+                    <p>
+                      Title: <span class="clr-muted">Full Stack Developer</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      Programming Language:
+                      <span class="clr-muted">JavaScript</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>
+                      Years Of Experience: <span class="clr-muted">1+</span>
+                    </p>
+                  </div>
+                </div>
+                <div class="box">
+                  <h4>Billing Information</h4>
+                  <div>
+                    <p>Payment Method: <span class="clr-muted">Paypal</span></p>
+                  </div>
+                  <div>
+                    <p>
+                      Email:
+                      <span class="clr-muted">issakass344@gmail.com</span>
+                    </p>
+                  </div>
+                  <div>
+                    <p>Subscription: <span class="clr-muted">Monthly</span></p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="wrapper files"></div>
+            <!-- MY SKILLS -->
+            <div class="my-skills widget">
+              <h2 class="widget-title">My Skills</h2>
+              <p class="widget-subtitle">Complete Skills List</p>
+              <ul class="skills"></ul>
+            </div>
+            <!-- LATEST ACTIVITIES -->
+            <div class="latest-activities widget">
+              <h2 class="widget-title">Latest Activities</h2>
+              <p class="widget-subtitle">Latest Activities Done By The User</p>
+              <div class="activities"></div>
+            </div>
           </div>
         </div>
       </main>
     </div>
 
     <!-- JS -->
-    <script src="js/files.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/activities.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

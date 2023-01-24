@@ -1,9 +1,5 @@
 /* CONTAINER */
 .wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: var(--gap);
   grid-template-areas:
     "welcome"
     "draft"

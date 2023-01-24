@@ -38,15 +38,11 @@
 .filter .input {
   flex: 1;
 }
-.courses {
+.wrapper {
   flex: 1;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  gap: var(--gap);
 }
 @media (min-width: 576px) {
-  .courses {
+  .wrapper {
     grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
   }
 }

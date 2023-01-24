@@ -1,0 +1,146 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--gap);
+}
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(32em, 1fr));
+  }
+}
+/* SITE CONTROL */
+.site-control .data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+}
+.site-control .data .title {
+  font-weight: var(--fw-medium);
+  color: var(--text2);
+  margin-bottom: var(--spacing-4xs);
+}
+.site-control .data .desc {
+  font-size: var(--fs-adjust);
+}
+.site-control textarea {
+  width: 100%;
+  height: 10rem;
+  resize: none;
+}
+/* GENERAL INFO */
+.general-info form .input-box:not(:last-child) {
+  margin-bottom: var(--spacing-lg);
+}
+.general-info form .input-box label {
+  font-size: var(--fs-sm);
+  display: block;
+  margin-bottom: var(--spacing-4xs);
+}
+.general-info form .input-box input[type="text"] {
+  width: 100%;
+}
+.general-info form .input-box input {
+  border-radius: 0.5em;
+}
+.general-info form .input-box > div {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+.general-info form .input-box input[type="email"] {
+  flex-grow: 1;
+  background-color: var(--bg);
+  opacity: 75%;
+  cursor: no-drop;
+}
+/* SECURITY INFO */
+.security-info .box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.security-info .box:not(:last-child) {
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--spacing-sm);
+}
+.security-info .box .text {
+  flex: 1;
+}
+.security-info .box .text .title {
+  font-weight: var(--fw-medium);
+  color: var(--text2);
+  margin-bottom: var(--spacing-2xs);
+}
+.security-info .box .text .desc {
+  font-size: var(--fs-adjust);
+}
+/* SOCIAL INFO */
+.social-info .socials .social {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 0.4em;
+}
+.social-info .socials .social:not(:last-child) {
+  margin-bottom: var(--spacing-md);
+}
+.social-info .socials .social .icon {
+  margin-left: var(--spacing-2xs);
+  margin-right: var(--spacing-2xs);
+}
+.social-info .socials .social input {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-left: 1px solid var(--border);
+}
+.social-info .socials .social:focus-within,
+.social-info .socials .social:focus-within input {
+  border-color: var(--brand);
+}
+/* WIDGETS CONTROL */
+.widgets-control .controls .control:not(:last-child) {
+  margin-bottom: var(--spacing-md);
+}
+/* BACKUP MANAGER */
+.backup-manager .period .radio {
+  margin-bottom: var(--spacing-md);
+}
+.backup-manager .servers {
+  border-top: 1px solid var(--border);
+  padding-top: var(--spacing-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+@media (min-width: 576px) {
+  .backup-manager .servers {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.backup-manager .servers .server input {
+  display: none;
+  appearance: none;
+}
+.backup-manager .servers .server label {
+  display: grid;
+  place-items: center;
+  gap: var(--gap);
+  border: 2px solid var(--border);
+  padding: var(--spacing-md) var(--spacing-md);
+  border-radius: var(--rad-md);
+  color: var(--text2);
+  cursor: pointer;
+  transition: border-color var(--timing) ease, color var(--timing) ease;
+}
+.backup-manager .servers .server input:checked + label {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+.backup-manager .servers .server label .icon {
+  font-size: var(--fs-xl);
+}

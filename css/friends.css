@@ -1,0 +1,87 @@
+.wrapper {
+  flex: 1;
+}
+@media (min-width: 576px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(19em, 1fr));
+  }
+}
+.friend {
+  position: relative;
+  padding: var(--spacing-2xs);
+}
+.friend .friend-contact {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.friend .friend-contact a {
+  --size: 36px;
+  width: var(--size);
+  height: var(--size);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--rad-circle);
+  margin-right: var(--spacing-6xs);
+  font-size: var(--fs-sm);
+}
+.friend .friend-contact a:hover {
+  background-color: var(--brand);
+  color: var(--clr-white);
+}
+.friend .friend-data {
+  display: grid;
+  place-items: center;
+  margin-top: var(--spacing-md);
+}
+.friend .friend-data .profile-img {
+  --size: 7em;
+}
+.friend .friend-data .friend-name {
+  margin-top: var(--spacing-xs);
+  margin-bottom: var(--spacing-6xs);
+  color: var(--text1);
+}
+.friend .friend-data .friend-job {
+  font-size: var(--fs-sm);
+}
+.friend .friend-info {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: var(--spacing-xs) 0;
+  padding: var(--spacing-2xs) 0;
+  position: relative;
+}
+.friend .friend-info li {
+  color: var(--text2);
+  font-size: var(--fs-sm);
+}
+.friend .friend-info li:not(:last-child) {
+  margin-bottom: var(--spacing-2xs);
+}
+.friend .friend-info li .icon {
+  margin-right: var(--spacing-5xs);
+}
+.friend .friend-info .vip {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  color: var(--brand);
+  opacity: 33%;
+}
+.friend .friend-settings {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.friend .friend-settings .friend-join {
+  font-size: var(--fs-adjust);
+}
+.friend .friend-settings .main-btn {
+  display: inline-block;
+  font-size: var(--fs-adjust);
+}

@@ -1,0 +1,148 @@
+.wrapper {
+  grid-template-areas:
+    "profile"
+    "skills"
+    "activities";
+}
+@media (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-areas:
+      "profile profile profile profile profile profile profile"
+      "skills skills skills activities activities activities activities";
+  }
+}
+.profile {
+  grid-area: profile;
+}
+.my-skills {
+  grid-area: skills;
+}
+.latest-activities {
+  grid-area: activities;
+}
+/* PROFILE */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--gap) * 2);
+}
+@media (min-width: 768px) {
+  .profile {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gap);
+  }
+}
+.profile .profile-info {
+  display: grid;
+  place-items: center;
+  gap: var(--gap);
+}
+@media (min-width: 768px) {
+  .profile .profile-info {
+    flex-basis: 12em;
+  }
+}
+.profile .profile-info .profile-img {
+  --size: 5em;
+}
+.profile .profile-info .user {
+  color: var(--text1);
+  font-weight: var(--fw-medium);
+}
+.profile .profile-data {
+  flex: 1;
+  padding-left: inherit;
+}
+@media (min-width: 768px) {
+  .profile .profile-data {
+    border-left: 1px solid var(--border);
+  }
+}
+.profile .profile-data .box:not(:last-child) {
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+}
+.profile .profile-data .box h4 {
+  color: var(--text2);
+  margin-bottom: var(--spacing-4xs);
+}
+.profile .profile-data .box > div {
+  font-size: var(--fs-sm);
+}
+.profile .profile-data .box > div p {
+  padding: var(--spacing-5xs) 0;
+  color: var(--text2);
+}
+.profile .profile-data .box > div p span {
+  margin-left: var(--spacing-4xs);
+}
+/* MY SKILLS */
+.my-skills li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-4xs);
+}
+.my-skills li:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: var(--spacing-2xs);
+  padding-bottom: var(--spacing-2xs);
+}
+.my-skills li .skill {
+  cursor: auto;
+  user-select: none;
+}
+/* LATEST ACTIVITIES */
+.latest-activities .activities .activity {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+@media (max-width: 575px) {
+  .latest-activities .activities .activity {
+    flex-direction: column;
+  }
+}
+.latest-activities .activities .activity:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+.latest-activities .activities .activity img {
+  width: 4em;
+}
+.latest-activities .activities .activity .activity-data {
+  flex: 1;
+}
+@media (max-width: 575px) {
+  .latest-activities .activities .activity .activity-data {
+    text-align: center;
+  }
+}
+.latest-activities .activities .activity .activity-data .activity-name {
+  color: var(--text2);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--spacing-4xs);
+}
+.latest-activities .activities .activity .activity-data .activity-desc {
+  font-size: var(--fs-sm);
+}
+.latest-activities .activities .activity .activity-date {
+  text-align: right;
+}
+@media (max-width: 575px) {
+  .latest-activities .activities .activity .activity-date {
+    text-align: center;
+  }
+}
+.latest-activities .activities .activity .activity-date p {
+  color: var(--text2);
+  margin-bottom: var(--spacing-4xs);
+  font-size: var(--fs-sm);
+}
+.latest-activities .activities .activity .activity-date span {
+  font-size: var(--fs-adjust);
+}

@@ -1,0 +1,47 @@
+@media (min-width: 576px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(26em, 1fr));
+  }
+}
+.plan .plan-header {
+  --bg-saturation: 50%;
+  --bg-lightness: 40%;
+  border-radius: inherit;
+  text-align: center;
+  padding: var(--spacing-lg);
+  color: var(--clr-white);
+}
+.plan .plan-header .plan-name {
+  font-size: var(--fs-xl);
+  margin-bottom: var(--spacing-2xs);
+}
+.plan .plan-header .plan-price {
+  position: relative;
+  font-size: var(--fs-2xl);
+}
+.plan .plan-header .plan-price sup {
+  position: absolute;
+  top: -0.4em;
+  left: -0.75em;
+  font-size: var(--fs-lg);
+}
+.plan .plan-list {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+.plan .plan-list .plan-item {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+.plan .plan-list .plan-item span {
+  color: var(--text2);
+  margin-left: var(--spacing-2xs);
+  text-transform: capitalize;
+  font-size: var(--fs-sm);
+}
+.plan .plan-list .plan-item .help {
+  margin-left: auto;
+}

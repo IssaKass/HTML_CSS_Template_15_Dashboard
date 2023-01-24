@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: var(--gap);
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .container {
     flex-direction: row-reverse;
     align-items: flex-start;
@@ -12,30 +12,25 @@
 .files-stats {
   min-width: 15em;
 }
-.files {
+.wrapper {
   flex: 1;
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
-  grid-template-rows: auto;
-  gap: var(--gap);
 }
-@media (max-width: 767px) {
-  .files-stats .widget-title {
-    text-align: center;
-  }
+.files-stats .widget-title {
+  text-align: center;
 }
 .files-stats .stats {
   display: grid;
   gap: var(--gap);
-  margin-top: var(--spacing-sm);
-  margin-bottom: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 @media (min-width: 576px) {
   .files-stats .stats {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .files-stats .stats {
     grid-template-columns: 1fr;
   }
@@ -62,7 +57,7 @@
 .files-stats .stat .data {
   flex: 1;
 }
-.files-stats .stat .type {
+.files-stats .stat .name {
   color: var(--text2);
   font-weight: var(--fw-medium);
 }
@@ -72,8 +67,8 @@
 }
 .files-stats .main-btn {
   font-size: var(--fs-sm);
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  text-align: center;
 }
 .files-stats .main-btn .icon {
   margin-right: var(--spacing-4xs);

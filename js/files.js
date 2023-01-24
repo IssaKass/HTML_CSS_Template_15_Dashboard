@@ -65,7 +65,7 @@ const Files = [
   },
   {
     name: "my-file",
-    extension: "dll",
+    extension: "jpg",
     author: "Coder",
     uploadDate: new Date("2023-01-01"),
     size: 2306867,
@@ -145,7 +145,7 @@ const Files = [
 const fileLayout = (file) => `
 	<i class="fa-solid fa-download fa-fw clr-brand-muted download"></i>
 	<div class="file-data">
-		<img src="imgs/${file.extension}.svg" 
+		<img src="imgs/${file.extension}.png" 
 				alt="${file.extension} icon" class="file-img"/>
 		<h4 class="file-name">${file.name}.${file.extension}</h4>
 	</div>
@@ -163,7 +163,7 @@ Files.forEach((file) => {
   filesContainer.appendChild(item);
 });
 
-function getFilesCount(...types) {
+function getFilesCount(types) {
   let count = 0;
   types.forEach((type) => {
     count += Files.filter((file) => file.extension === type).length;
@@ -175,7 +175,7 @@ function getAllFilesCount() {
   return Files.length;
 }
 
-function getFilesSizes(...types) {
+function getFilesSizes(types) {
   let totalSize = 0;
   types.forEach((type) => {
     var arr = Files.filter((file) => file.extension === type);
@@ -194,23 +194,63 @@ function getFilesAllSizes() {
 
 let stats = document.querySelectorAll(".files-stats .stats .stat");
 
-stats.forEach((stat) => {
-  let count = stat.querySelector(".count");
-  let totalSize = stat.querySelector(".total-size");
-  if (stat.classList.contains("pdf")) {
-    count.textContent = `${getFilesCount("pdf")} Files`;
-    totalSize.textContent = `${niceBytes(getFilesSizes("pdf"))}`;
-  } else if (stat.classList.contains("images")) {
-    count.textContent = `${getFilesCount("png")} Files`;
-    totalSize.textContent = `${niceBytes(getFilesSizes("png"))}`;
-  } else if (stat.classList.contains("dll")) {
-    count.textContent = `${getFilesCount("dll")} Files`;
-    totalSize.textContent = `${niceBytes(getFilesSizes("dll"))}`;
-  } else if (stat.classList.contains("avi")) {
-    count.textContent = `${getFilesCount("avi")} Files`;
-    totalSize.textContent = `${niceBytes(getFilesSizes("avi"))}`;
-  } else if (stat.classList.contains("all")) {
-    count.textContent = `${getAllFilesCount()} Files`;
-    totalSize.textContent = `${niceBytes(getFilesAllSizes())}`;
+const FilesStats = [
+  {
+    types: [],
+    icon: "fa-solid fa-file",
+    name: "All Files",
+    color: "brand",
+  },
+  {
+    types: ["pdf"],
+    icon: "fa-regular fa-file-pdf",
+    name: "PDF Files",
+    color: "info",
+  },
+  {
+    types: ["png", "jpg"],
+    icon: "fa-regular fa-images",
+    name: "Images",
+    color: "success",
+  },
+  {
+    types: ["dll"],
+    icon: "fa-solid fa-gear",
+    name: "DLL Files",
+    color: "warning",
+  },
+  {
+    types: ["avi"],
+    icon: "fa-solid fa-file-video",
+    name: "AVI Files",
+    color: "danger",
+  },
+];
+
+const filesStatLayout = (stat) => `
+  <i class="${stat.icon} clr-${stat.color} bg-${stat.color} icon"></i>
+  <div class="data">
+    <h5 class="name">${stat.name}</h5>
+    <span class="count clr-brand-muted">${getFilesCount(
+      stat.types
+    )} Files</span>
+  </div>
+  <span class="total-size clr-brand-muted">${niceBytes(
+    getFilesSizes(stat.types)
+  )}</span>
+`;
+
+FilesStats.forEach((stat) => {
+  var item = document.createElement("div");
+  item.classList.add("stat");
+  item.innerHTML = filesStatLayout(stat);
+
+  if (stat.name === "All Files") {
+    item.querySelector(".count").textContent = `${getAllFilesCount()} Files`;
+    item.querySelector(".total-size").textContent = niceBytes(
+      getFilesAllSizes()
+    );
   }
+
+  document.querySelector(".files-stats .stats").appendChild(item);
 });

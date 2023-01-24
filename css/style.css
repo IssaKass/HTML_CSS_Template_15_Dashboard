@@ -205,6 +205,11 @@ textarea {
   border: 1px solid var(--border);
   caret-color: var(--text1);
 }
+input:not([type="submit"]):focus,
+select:focus,
+textarea:focus {
+  border-color: var(--brand);
+}
 input::placeholder,
 select::placeholder,
 textarea::placeholder {
@@ -220,10 +225,51 @@ textarea::placeholder {
 }
 .checkbox label {
   position: relative;
-  padding-left: calc(var(--size) * 1.5);
+  padding-left: calc(var(--size) * 1.75);
+  color: var(--text2);
+  user-select: none;
   cursor: pointer;
 }
 .checkbox label::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f00c";
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-xs);
+  border: 2px solid var(--border);
+  border-radius: calc(var(--size) / 4);
+  background-color: transparent;
+  color: transparent;
+  transition: var(--timing);
+}
+.checkbox input:checked + label::before {
+  background-color: var(--brand);
+  border-color: transparent;
+  color: var(--clr-white);
+}
+.radio {
+  position: relative;
+  --size: 20px;
+}
+.radio input {
+  appearance: none;
+  display: none;
+}
+.radio label {
+  position: relative;
+  padding-left: calc(var(--size) * 1.6);
+  color: var(--text2);
+  user-select: none;
+  cursor: pointer;
+}
+.radio label::before {
   content: "";
   position: absolute;
   width: var(--size);
@@ -234,16 +280,54 @@ textarea::placeholder {
   display: grid;
   place-items: center;
   font-size: var(--fs-xs);
-  border: 1px solid var(--border);
-  border-radius: calc(var(--size) / 4);
+  transition: var(--timing);
+  border-radius: var(--rad-circle);
+  box-shadow: inset 0 0 0 2px var(--border);
+  background-color: transparent;
 }
-.checkbox input:checked + label::before {
+.radio input:checked + label::before {
+  background-color: var(--brand);
+  box-shadow: inset 0 0 0 2px var(--brand), inset 0 0 0 5px var(--widget);
+}
+.toggle {
+  position: relative;
+  --w: 60px;
+  --h: 30px;
+  --cs: 22px;
+}
+.toggle input {
+  appearance: none;
+  display: none;
+}
+.toggle label {
+  position: relative;
+  display: block;
+  width: var(--w);
+  height: var(--h);
+  border-radius: 30px;
+  background-color: var(--brand);
+  cursor: pointer;
+}
+.toggle label::before {
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
+  content: "\f00d";
+  position: absolute;
+  width: var(--cs);
+  height: var(--cs);
+  display: grid;
+  place-items: center;
+  top: calc(var(--h) / 2 - var(--cs) / 2);
+  left: calc(var(--w) - var(--h) / 2 - var(--cs) / 2);
+  border-radius: var(--rad-circle);
+  background-color: var(--clr-white);
+  color: var(--brand);
+  font-size: var(--fs-adjust);
+  transition: var(--timing);
+}
+.toggle input:checked + label::before {
   content: "\f00c";
-  background-color: var(--brand);
-  border-color: transparent;
-  color: var(--clr-white);
+  left: calc(var(--h) / 2 - var(--cs) / 2);
 }
 [class*="clr"] {
   --clr-hue: var(--brand-hue);
@@ -266,7 +350,7 @@ textarea::placeholder {
   padding: var(--spacing-6xs) var(--spacing-2xs);
   border-radius: 0.4em;
   font-size: var(--fs-sm);
-  font-weight: var(--fw-light);
+  font-weight: var(--fw-regular);
   cursor: pointer;
   outline: none;
   border: none;
@@ -561,4 +645,10 @@ svg {
   font-weight: var(--fw-extra-bold);
   color: var(--text1);
   margin-bottom: var(--spacing-3xs);
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: var(--gap);
 }
