@@ -213,6 +213,12 @@
   padding: var(--gap) 0;
   text-transform: capitalize;
 }
+@media (max-width: 575px) {
+  .page-body .latest-news .news {
+    flex-direction: column;
+    gap: var(--gap);
+  }
+}
 .page-body .latest-news .news:not(:last-child) {
   border-bottom: 1px solid var(--border);
 }
@@ -223,6 +229,11 @@
 }
 .page-body .latest-news .news .news-data {
   flex: 1;
+}
+@media (max-width: 575px) {
+  .page-body .latest-news .news .news-data {
+    text-align: center;
+  }
 }
 .page-body .latest-news .news .news-data .news-title {
   margin-bottom: var(--spacing-4xs);
