@@ -7,3 +7,5 @@ Responsive Dashboard
 - Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
 <a href="https://issakass.github.io/HTML_CSS_Template_15_Dashboard/"><strong>➥ Live Demo</strong></a>
+
+![preview desktop img](/preview/preview-desktop.png)
